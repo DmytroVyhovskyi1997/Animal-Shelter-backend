@@ -2,12 +2,13 @@ const fs = require("fs/promises");
 const { nanoid } = require("nanoid");
 const path = require('path');
 
-const booksPath = path.join(__dirname, "books.json")
+const booksPath = path.join(__dirname, "books.json");
 
-const getAll = async ()=>{
-    const data = await fs.readFile(booksPath)
-    return JSON.parse(data)
+const getAll = async () => {
+        const data = await fs.readFile(booksPath);
+        return JSON.parse(data);
 };
+
 
 const getById = async (id)=>{
     const books = getAll();
@@ -48,7 +49,7 @@ const deleteById = async (id)=>{
     return result
 }
 
-module.exports={
+module.exports = {
     getAll,
     getById,
     add,
